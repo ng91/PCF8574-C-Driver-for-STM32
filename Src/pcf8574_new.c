@@ -32,7 +32,7 @@ I2C_HandleTypeDef hi2c1;
 	    return result;
 	}
 
-void pcf8574_init_0(uint8_t exp_num, uint8_t exp_addr){
+void pcf8574_init(uint8_t exp_num, uint8_t exp_addr){
 	pcf8574_addr[exp_num]=exp_addr;
 	for(i=0;i=2;i++){
 		port_state[EXP_NUM]=0b00000000;
@@ -44,7 +44,7 @@ void pcf8574_setaddr(int exp_num, int addr){
 	pcf8574_addr[exp_num]=addr;
 }
 
-void pcf8574_write_0(int exp_num, int port_num, int port_state, int send_cmd){
+void pcf8574_write(int exp_num, int port_num, int port_state, int send_cmd){
 
 	uint8_t number=int_pow(2, port_num);
 
